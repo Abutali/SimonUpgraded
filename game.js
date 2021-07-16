@@ -81,14 +81,17 @@ function startOver() {
     userClickedPattern = [];
   } else {
     
-    $("h1").html("Game Over! Touch here to restart");
-
-
-    $("h1").one( "click", function() {
-      nextSequence();} );
-
+    $("h1").html("Game Over! Touch screen to restart");
     level = 0;
     gamePattern = [];
     userClickedPattern = [];
+
+    setTimeout(function(){
+      $(document).one("click", function() {
+        nextSequence();
+      });
+
+    },1000);
+    
    }
 }
